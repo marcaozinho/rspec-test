@@ -1,0 +1,14 @@
+var qtdErrors = <%=@user.errors.count %>;
+
+if (qtdErrors > 0) {
+  $(".message").html("<h5>Ocorreu um erro</h5>");
+} else {
+  $(".message").html("<h5>Cadastrado com sucesso</h5>");
+  $("#user_name").val("");
+  $("#user_email").val("");
+}
+
+
+setTimeout(function() {
+  $(".message h5").remove();	
+}, 5000);

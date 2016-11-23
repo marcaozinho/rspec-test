@@ -30,9 +30,11 @@ class UsersController < ApplicationController
       if @user.save
         format.html { redirect_to @user, notice: 'Cadastrado com sucesso!' }
         format.json { render :show, status: :created, location: @user }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.js #views/users/create.js.erb
       end
     end
   end
